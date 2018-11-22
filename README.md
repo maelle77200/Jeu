@@ -19,30 +19,39 @@ void enter_name(){
 	direction();
 }
 
-void ennemis(){ 
+int ennemis(){
+	srand(time(NULL));
+	int nb = rand()%5+1;
+	f (nb == 1)
+		printf("Vous rencontrer EMINEM\n");
+	else if (nb == 2)
+		printf("Vous rencontrer DAMSO\n");
+	else if(nb == 3)
+		printf("Vous rencontrer POST MALONE\n");
+	else if(nb == 4)
+		printf("Vous rencontrer XXX TENTATION\n");
+	else if (nb == 5)
+		printf("Vous rencontrer KALASH\n");
+	return 0;
+}
 
-	for (int i = 0; i < ; ++i)
-	{
-		/* code */
+void combat(){
+	int combat = 0;
+	printf("Vous rencontrer votre adversaire c'est une chance pour vous de prouver ce que vous vallez en BATTLE !\n mai
+	vous pouvez aussi fuir et vous ridiculiser devant tout le monde\n alors taper 1 pour combattre ou 2 pour fuir.\n");
+	scanf("%d", combat);
+	switch(combat){
+	case 1:
+	ennemis();
+	break;
+	case 2:
+	ennemis();
+	break;
+	default:
+	printf("Veuillez rentrer un nombre valide")
 	}
+}
 
-	/*char *ch1 = "Eminem";
-	char *ch2 = "Damso";
-	char *ch3 = "Post Malone";
-	char *ch4 = "XXX Tentation";
-	char *ch5 = "Kalash";
-
-
-	puts(ch1);
-	puts(ch2);
-	puts(ch3);
-	puts(ch4);
-	puts(ch5);*/
-
-	
-
-
-	//printf("%s\n%s\n",*eminem ,*damso);
 
 	
 }
@@ -57,22 +66,31 @@ void direction(){
 		case 1:
 		printf(" Vous allez a l'ESt\n");
 		ennemis();
+		combat();
 		break; 
 
 		case 2:
 		printf(" Vous allez a l'Ouest\n");
+		ennemis();
+		combat();
 		break;
 
 		case 3:
 		printf(" Vous allez au Sud\n");
+		ennemis();
+		combat();
 		break;
 
 		case 4:
 		printf(" Vous allez au Nord\n");
+		ennemis();
+		combat();
 		break;
 
 		default:
 		printf(" veuillez entrer un nombre valide\n");
+		ennemis();
+		combat();
 		break;
 	}
 }
